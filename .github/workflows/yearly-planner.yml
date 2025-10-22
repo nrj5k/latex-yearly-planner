@@ -17,7 +17,7 @@ jobs:
       options: --user 1001
     steps:
       - uses: actions/checkout@v4
-      - run: apk add --no-cache git ghostscript ttf-firacode
+      - run: sudo apk add --no-cache git ghostscript ttf-firacode
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: .tool-versions
