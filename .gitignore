@@ -11,6 +11,84 @@ result
 /spec/reports/
 /tmp/
 /vendor/
+out/
 
 # rspec failure tracking
 .rspec_status
+# filepath: .gitignore
+# Created for latex-yearly-planner Ruby gem project
+
+# Ruby / Bundler
+*.gem
+*.rbc
+.bundle/
+vendor/bundle
+.vscode/settings.json
+.ruby-version
+.ruby-gemset
+.rvmrc
+
+# Documentation cache and generated files
+.yardoc
+_yardoc
+doc/
+rdoc/
+.rspec_status
+
+# Common Ruby development files
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Rails/Ruby artifacts
+log/
+tmp/
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+.coverage
+
+# Environment variables
+.env
+.env.*.local
+
+# IDE files
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# Build outputs
+pkg/
+dist/
+build/
+out/
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.#*
+*#
+.gulp-cache/
+
+# Test artifacts
+spec/examples.txt
+spec/reports/
+test/tmp/
+test/version_tmp/
