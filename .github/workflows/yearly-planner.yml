@@ -13,11 +13,11 @@ jobs:
   planner:
     runs-on: ubuntu-latest
     container:
-      image: pandoc/typst:latest-ubuntu
+      image: pandoc/typst:latest
       options: --user 1001
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update -qq && sudo apt-get install -y git ghostscript fonts-firacode fonts-firasans
+      - run: apk add --no-cache git ghostscript ttf-firacode
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: .tool-versions
