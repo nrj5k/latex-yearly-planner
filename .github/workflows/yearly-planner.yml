@@ -11,7 +11,7 @@ on:
 
 jobs:
   planner:
-    runs-on: ubuntu-latest
+    runs-on: alpine-latest
     container:
       image: pandoc/typst:latest
       options: --user 1001
