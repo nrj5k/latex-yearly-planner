@@ -1,0 +1,28 @@
+name: Build yearly planner
+
+on:
+  schedule:
+    - cron: "0 0 1 12 *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/template/**" # templates changed
+      - ".github/workflows/yearly-planner.yml"
+
+jobs:
+  planner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .tool-versions
+          bundler-cache: true
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ghostscript typst
+      - run: bash setup.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: planner-${{ github.run_number }}
+          path: out/*.pdf
