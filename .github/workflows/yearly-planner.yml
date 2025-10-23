@@ -18,7 +18,7 @@ jobs:
         with:
           ruby-version: .tool-versions
           bundler-cache: true
-      - run: sudo apt-add-repository ppa:system76/pop && sudo apt-get update -qq && sudo apt-get install -y ghostscript pop-fonts && sudo snap install typst
+      - run: sudo apt-get update -qq && sudo apt-get install -y ghostscript && sudo snap install typst
       - run: bash setup.sh
       - uses: actions/upload-artifact@v4
         with:
