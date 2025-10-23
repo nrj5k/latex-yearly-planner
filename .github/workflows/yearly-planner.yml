@@ -11,17 +11,14 @@ on:
 
 jobs:
   planner:
-    runs-on: alpine-latest
-    container:
-      image: pandoc/typst:latest
-      options: --user 1001
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apk add --no-cache git ghostscript ttf-firacode
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: .tool-versions
           bundler-cache: true
+      - run: sudo apt-get update -qq && sudo apt-get install -y ghostscript fonts-firacode fonts-firasans && sudo snap install typst
       - run: bash setup.sh
       - uses: actions/upload-artifact@v4
         with:
